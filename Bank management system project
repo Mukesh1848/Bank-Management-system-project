@@ -1,0 +1,98 @@
+#include <iostream>
+using namespace std;
+
+class bank {
+    public:
+    string name[100] , address[100] , y;
+    int balance;
+    public:
+    void open_account();
+    void Deposite_money();
+    void withdraw_money();
+    void display_account();
+};
+
+void bank ::  open_account() {
+    
+    cout<<"Enter your Full Name "<<endl;
+    cin.ignore();
+    cin.getline(name);
+    // cin>>name;
+    cout<<"Enter your Full Address "<<endl;
+    cin.ignore();
+    cin.getline(address,100);
+    // cin>>address;
+    cout<<"What type of you want to open account saving(s) or Current(c) "<<endl;
+    cin>>y;
+    cout<<"Enter Amount for Deposite "<<endl;
+    cin>>balance;
+    cout<<"Your Account is Created" <<endl;
+}
+
+void bank ::  Deposite_money() {
+    int a;
+    cout<<"How much you want to Deposite "<<endl;
+    cin>>a;
+    balance += a;
+    cout<<"total amount you deposite "<<balance;
+}
+
+void bank :: display_account() {
+    cout<<"Your Full Name "<<name<<endl;
+    cout<<"Your Adress are "<<address<<endl;
+    cout<<"Your Account Type are "<<y<<endl;
+    cout<<"Your total Monry "<<balance<<endl;
+}
+
+void bank :: withdraw_money() {
+    double amount;
+    cout<<"Enter Amount To Withdraw"<<endl;
+    cin>>amount;
+    balance =balance - amount;
+    cout<<"Your total Amount has saved"<<balance<<endl;
+} 
+
+int main() {
+    int ch;
+    int x;
+    bank obj;
+    
+do{
+        
+   cout<<"Dear Customer...Welcome To My Bank Management System. "<<endl<<endl;
+   cout<<"1). Open Account "<<endl;
+   cout<<"2). Deposite Money "<<endl;
+   cout<<"3). Withdraw Money "<<endl;
+   cout<<"4). Display Account "<<endl;
+   cout<<"5). Exit "<<endl;
+   
+   switch(ch){
+       case 1:<<"1). Open Account ";
+       obj.open_account();
+       break;
+       case 2:<<"2). Deposite Money ";
+       obj.Deposite_money();
+       break;
+       case 3:<<"3). Withdraw Money ";
+       obj.withdraw_money();
+       break;
+       case 4:<<"4). Display Account ";
+       obj.display_account;
+       break;
+       case 5:
+       if(ch==5){
+           exit(1);
+       }
+       default:
+       cout<<"This is not Exit try again"<<endl;
+   }
+   cout<<"if you want to select next option then type y"<<endl;
+   cout<<"if you want to exit then type n"<<endl;
+   x==getch();
+   if(x=='n' || x=='N')
+   exit(0);
+}
+while(x=='y' || x=='Y');
+
+    return 0;
+}
